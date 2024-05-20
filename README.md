@@ -5,12 +5,13 @@ Welcome to The Sanctuary of Forgotten Tales, a magical haven for book lovers and
 # Introduction
 
 The Sanctuary of Forgotten Tales is a library management system where users can browse books and authors. Inspired by the realms of fantasy, this project transforms a simple library into a mystical experience.
-Features
+
+# Features
 
     Book Management: View, add, update, and delete book records.
     Author Management: View, add, update, and delete author records.
 
-Enhancements and New Features
+# Enhancements and New Features
 
     Fantasy-Themed Interface: An enchanted user interface with a fantasy theme.
     Improved Form Error Handling: Display form errors beneath the corresponding fields for better user experience.
