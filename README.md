@@ -1,8 +1,8 @@
-The Sanctuary of Forgotten Tales
+# The Sanctuary of Forgotten Tales
 
 Welcome to The Sanctuary of Forgotten Tales, a magical haven for book lovers and fantasy enthusiasts. This project is based on the Mozilla Express Tutorial for creating a Local Library website, with additional enhancements to bring a touch of fantasy to the experience.
 
-Introduction
+# Introduction
 
 The Sanctuary of Forgotten Tales is a library management system where users can browse books and authors. Inspired by the realms of fantasy, this project transforms a simple library into a mystical experience.
 Features
@@ -20,7 +20,7 @@ Enhancements and New Features
     Search: search functionality for finding books, authors.
     Sort: Sorting functionality for lists of books and authors.
 
-Installation
+# Installation
 
 To install and run this project locally, follow these steps:
 
