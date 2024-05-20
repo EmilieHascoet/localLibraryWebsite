@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+
+  form.search-form(method="get" action="")
+    input.search-input(type="text" name="search" placeholder="Search by name" value=searchQuery)
+    input.search-submit(type="submit" value="Search")
+
+    select.sort-select(name="sort")
+      option(value="family_name_asc", selected=selectedOption==='family_name_asc' ? true : false) Family Name (A-Z)
+      option(value="family_name_desc", selected=selectedOption==='family_name_desc' ? true : false) Family Name (Z-A)
+      option(value="first_name_asc", selected=selectedOption==='first_name_asc' ? true : false) First Name (A-Z)
+      option(value="first_name_desc", selected=selectedOption==='first_name_desc' ? true : false) First Name (Z-A)
+      option(value="birth_date_asc", selected=selectedOption==='birth_date_asc' ? true : false) Birth Date (oldest)
+      option(value="birth_date_desc", selected=selectedOption==='birth_date_desc' ? true : false) Birth Date (most recent)
+    input.search-submit(type="submit" value="Sort")
+
+  if author_list.length
+    ul
+      each author in author_list
+        li
+          a(href=author.url) #{author.name}
+          |  (#{author.lifespan})
+  else
+    p There are no authors.

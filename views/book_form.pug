@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='/catalog/book/create')
+    div.form-group
+      label(for='title') Title:
+      input#title.form-control(type='text', placeholder='Name of book' name='title' required value=(undefined===book ? '' : book.title) )
+      if title_error
+        div.text-danger #{title_error.msg}
+    div.form-group
+      label(for='author') Author:
+      select#author.form-control(name='author' required)
+        option(value='') --Please select an author--
+        for author in authors
+          if authorBook
+            if author._id.toString()===authorBook
+              option(value=author._id selected) #{author.name}
+            else
+              option(value=author._id) #{author.name}
+          else
+            option(value=author._id) #{author.name}
+      if author_error
+        div.text-danger #{author_error.msg}
+    div.form-group
+      label(for='summary') Summary:
+      textarea#summary.form-control(placeholder='Summary' name='summary' required)= undefined===book ? '' : book.summary
+      if summary_error
+        div.text-danger #{summary_error.msg}
+    div.form-group
+      label(for='publication_date') Publication Date:
+      input#publication_date.form-control(type='date', name='publication_date' value=(undefined===book ? '' : book.publication_date_yyyy_mm_dd) required)
+      if publication_date_error
+        div.text-danger #{publication_date_error.msg}
+    div.form-group
+      label(for='isbn') ISBN:
+      input#isbn.form-control(type='text', placeholder='ISBN13' name='isbn' value=(undefined===book ? '' : book.isbn) required)
+      if isbn_error
+        div.text-danger #{isbn_error.msg}
+    button.btn.btn-primary(type='submit') Submit

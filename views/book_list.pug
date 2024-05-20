@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+
+  form.search-form(method="get" action="")
+    input.search-input(type="text" name="search" placeholder="Search by title" value=searchQuery)
+    input.search-submit(type="submit" value="Search")
+
+    select.sort-select(name="sort")
+      option(value="title_asc", selected=selectedOption==='title_asc' ? true : false) Title (A-Z)
+      option(value="title_desc", selected=selectedOption==='title_desc' ? true : false) title (Z-A)
+      option(value="published_asc", selected=selectedOption==='published_asc' ? true : false) Publication date (oldest)
+      option(value="published_desc", selected=selectedOption==='published_desc' ? true : false) Publication date (most recent)
+    input.search-submit(type="submit" value="Sort")
+  
+  if book_list.length
+    ul
+      each book in book_list
+        li
+          a(href=book.url) #{book.title}
+          |  (#{book.author.name})
+
+  else
+    p There are no books.
