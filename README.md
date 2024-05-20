@@ -24,7 +24,7 @@ Installation
 
 To install and run this project locally, follow these steps:
 
-    Clone the repository:
+Clone the repository
 
 Install dependencies:
 
